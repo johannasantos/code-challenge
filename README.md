@@ -14,3 +14,7 @@ A test for Solstice assignment that search in www.amazon.com for the third eleme
 Install pytest by running:
 
 pip install pytest
+
+# To run the script use the following command 
+
+pytest amazon-test-challenge.py
