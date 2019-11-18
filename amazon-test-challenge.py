@@ -24,14 +24,21 @@ def test_amazon_search():
         item_link = item.find_element_by_class_name('a-link-normal')
         item_link.click()
 
+        # Assert that the item is able to purchase 
+        time.sleep(5)
+        if len(driver.find_elements_by_id('add-to-cart-button-ubb')) > 0:
+            btn_id = 'add-to-cart-button-ubb'
+        else:
+            btn_id = 'add-to-cart-button'
         
+        assert len(driver.find_elements_by_id(btn_id)) > 0
+        button_add_to_cart = driver.find_element_by_id(btn_id)
 
-
-
-
-
+        assert button_add_to_cart.is_displayed()
+        assert button_add_to_cart.is_enabled()
 
 
     finally:
+        time.sleep(10)
         driver.quit()
 
