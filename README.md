@@ -1,7 +1,5 @@
 # code-challenge
 
-Solstice automation challenge.
-
 this test has been written using Python 3.
 
 # Testing amazon search
