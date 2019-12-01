@@ -1,6 +1,8 @@
 # code-challenge
 
-this test has been written using Python 3.
+Tests made with Python using Selenium.
+
+Below there is some instructions of how to execute the "amazon-test-challenge.py".
 
 # Testing amazon search
 
@@ -16,3 +18,7 @@ pip install pytest
 # To run the script use the following command 
 
 pytest amazon-test-challenge.py
+
+# Unit test files should be executed running: 
+
+python -m unittest unit-test.py
