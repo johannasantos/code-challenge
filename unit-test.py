@@ -1,34 +1,29 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
+from Pages.PageIndex import *
+from Pages.FlightPage import *
+
 import time
 
 class newTours(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.get('http://newtours.demoaut.com/')
+        self.page_index = PageIndex(self.driver)
+        self.page_flight = FlightPage(self.driver)
         time.sleep(2)
 
     def test_dropdown(self):
-        self.driver.find_element_by_link_text('REGISTER').click()
-        countryDropdown = Select(self.driver.find_element_by_name('country'))
-        countryDropdown.select_by_index(5)
-        countryDropdown.select_by_value('11')
-        countryDropdown.select_by_visible_text('CONGO')
-        self.assertEqual(countryDropdown.first_selected_option.text.strip(), 'CONGO')
-        self.assertNotEqual(countryDropdown.first_selected_option.text.strip(), 'ITALY')
-        self.assertTrue(countryDropdown.first_selected_option.text.strip() == 'CONGO')
-        self.assertFalse(countryDropdown.first_selected_option.text.strip() == 'ARGENTINA')
-        self.assertFalse(countryDropdown.first_selected_option.text.strip() != 'CONGO')
+        self.page_index.click_register()
+        self.page_flight.select_country_by_index(5)
+        self.page_flight.select_country_by_value(11)
+        self.page_flight.select_country_by_name('CONGO')
+        self.page_flight.verify_country('CONGO')
+        self.page_flight.verify_not_country('ITALY')
 
     def test_register(self):
-        user_box = self.driver.find_element_by_name('userName')
-        password_box = self.driver.find_element_by_name('password')
-        submit_button = self.driver.find_element_by_name('login')
-        user_box.send_keys('test')
-        password_box.send_keys('test')
-        submit_button.click()
-        time.sleep(2)
+        self.page_index.login('test', 'test')
         link_registration_form = self.driver.find_element_by_link_text('REGISTER')
         self.assertEqual(link_registration_form.text, 'REGISTER')
 
