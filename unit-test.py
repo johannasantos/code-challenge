@@ -16,6 +16,10 @@ class newTours(unittest.TestCase):
         countryDropdown.select_by_value('11')
         countryDropdown.select_by_visible_text('CONGO')
         self.assertEqual(countryDropdown.first_selected_option.text.strip(), 'CONGO')
+        self.assertNotEqual(countryDropdown.first_selected_option.text.strip(), 'ITALY')
+        self.assertTrue(countryDropdown.first_selected_option.text.strip() == 'CONGO')
+        self.assertFalse(countryDropdown.first_selected_option.text.strip() == 'ARGENTINA')
+        self.assertFalse(countryDropdown.first_selected_option.text.strip() != 'CONGO')
 
     def test_register(self):
         user_box = self.driver.find_element_by_name('userName')
