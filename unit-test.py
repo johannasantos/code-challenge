@@ -5,6 +5,7 @@ from Pages.PageIndex import *
 from Pages.FlightPage import *
 from Pages.PageRegister import *
 
+
 import time
 
 class newTours(unittest.TestCase):
@@ -26,10 +27,10 @@ class newTours(unittest.TestCase):
 
     def test_register(self):
         self.page_index.login('test', 'test')
-        link_registration_form = self.driver.find_element_by_link_text('REGISTER')
-        self.assertEqual(link_registration_form.text, 'REGISTER')
+        self.page_register.verify_registration_form()
 
     def tearDown(self):
+        self.driver.close()
         self.driver.quit()
 
 
