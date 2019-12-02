@@ -19,6 +19,6 @@ pip install pytest
 
 pytest amazon-test-challenge.py
 
-# Unit test files should be executed running: 
+# Unit tests files should be executed running: 
 
 python -m unittest unit-test.py
