@@ -1,6 +1,7 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
 from Pages.PageIndex import *
 from Pages.FlightPage import *
 from Pages.PageRegister import *
