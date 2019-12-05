@@ -27,6 +27,9 @@ class newTours(unittest.TestCase):
         self.page_index.login('test', 'test')
         self.page_register.verify_registration_form()
 
+    def test_login_by_tabs(self):
+        self.page_index.login_by_tab('test', 'test')
+
     def tearDown(self):
         self.driver.close()
         self.driver.quit()

@@ -2,8 +2,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.common.keys import Keys
 
-class PageIndex:
+class PageIndex(object):
     def __init__(self,myDriver):
         self.driver = myDriver
         self.user_box = {By.NAME, 'userName'}
@@ -24,5 +25,8 @@ class PageIndex:
         except:
             print('Element is not clickeable')
         self.driver.find_element(*self.submit_button).click()
+
+    def login_by_tab(self, user_name, password):
+        self.driver.find_element(*self.user_box).send_keys(user_name+Keys.TAB+password+Keys.TAB+Keys.ENTER)
 
 
