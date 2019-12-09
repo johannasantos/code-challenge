@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 
 class PageIndex(object):
-    def __init__(self,myDriver):
+    def __init__(self, myDriver):
         self.driver = myDriver
         self.user_box = {By.NAME, 'userName'}
         self.pass_box = {By.NAME, 'password'}

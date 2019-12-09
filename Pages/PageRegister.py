@@ -3,6 +3,7 @@ import unittest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 
+
 class PageRegister():
     def __init__(self, myDriver):
         self.driver = myDriver
