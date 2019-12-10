@@ -9,13 +9,14 @@ from selenium.webdriver.common.by import By
 class FlightPage:
     def __init__(self, myDriver):
         self.driver = myDriver
-        self.countryDropdown = {By.NAME, 'country'}
+        self.countryDropdown = (By.NAME, 'country')
 
     def select_country_by_index(self, index):
         Select(self.driver.find_element(*self.countryDropdown)).select_by_index(index)
 
     def select_country_by_value(self, value):
         Select(self.driver.find_element(*self.countryDropdown)).select_by_value(value)
+
     def select_country_by_name(self, name):
         Select(self.driver.find_element(*self.countryDropdown)).select_by_visible_text(name)
 

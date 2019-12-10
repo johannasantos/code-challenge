@@ -4,13 +4,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 
+
 class PageIndex(object):
     def __init__(self, myDriver):
         self.driver = myDriver
-        self.user_box = {By.NAME, 'userName'}
-        self.pass_box = {By.NAME, 'password'}
-        self.register_link = {By.LINK_TEXT, 'REGISTER'}
-        self.submit_button = {By.NAME, 'login'}
+        self.user_box = (By.NAME, 'userName')
+        self.pass_box = (By.NAME, 'password')
+        self.register_link = (By.LINK_TEXT, 'REGISTER')
+        self.submit_button = (By.NAME, 'login')
 
     def click_register(self):
         self.driver.implicitly_wait(5)
@@ -22,9 +23,9 @@ class PageIndex(object):
         self.driver.find_element(*self.pass_box).send_keys(password)
         try:
             submit = WebDriverWait(self.driver, 5).until(expected_conditions.element_to_be_clickable(self.submit_button))
+            submit.click()
         except:
             print('Element is not clickeable')
-        self.driver.find_element(*self.submit_button).click()
 
     def login_by_tab(self, user_name, password):
         self.driver.find_element(*self.user_box).send_keys(user_name+Keys.TAB+password+Keys.TAB+Keys.ENTER)
