@@ -6,7 +6,7 @@ from Pages.PageIndex import *
 from Pages.FlightPage import *
 from Pages.PageRegister import *
 import xmlrunner
-
+import HtmlTestRunner
 
 class newTours(unittest.TestCase):
     def setUp(self):
@@ -36,9 +36,9 @@ class newTours(unittest.TestCase):
         self.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main(
-        testRunner=xmlrunner.XMLTestRunner(output=='output'),
-        failfast=False, buffer=False, catchbreak=False)
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='myreport'))
+
+
 
 
 

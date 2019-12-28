@@ -13,10 +13,11 @@ class FlightPage:
 
     def select_country_by_index(self, index):
         Select(self.driver.find_element(*self.countryDropdown)).select_by_index(index)
+        self.driver.get_screenshot_as_file('screenIndex.png')
 
     def select_country_by_value(self, value):
         Select(self.driver.find_element(*self.countryDropdown)).select_by_value(value)
-
+        self.driver.save_screenshot('screenValue.png')
     def select_country_by_name(self, name):
         Select(self.driver.find_element(*self.countryDropdown)).select_by_visible_text(name)
 
