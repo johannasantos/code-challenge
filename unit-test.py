@@ -13,12 +13,10 @@ from helpers.data import *
 
 class newTours(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--headless')
+        self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.get('http://newtours.demoaut.com/')
-        # self.driver.maximize_window()
-        # self.driver.set_window_size(400, 400)
-        # self.driver.set_window_position(500, 200)
-        self.driver.execute_script("window.open('https://www.google.com/')")
         self.mis_tabs = self.driver.window_handles
         self.page_index = PageIndex(self.driver)
         self.page_flight = FlightPage(self.driver)
@@ -41,9 +39,7 @@ class newTours(unittest.TestCase):
         self.page_index.login_by_tab('test', 'test')
 
 
-    def test_switch_navigation(self):
-        self.driver.switch_to.window(self.mis_tabs[1])
-        self.driver.get("https://github.com/johannasantos")
+
 
     def tearDown(self):
         self.driver.close()
