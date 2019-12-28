@@ -15,7 +15,8 @@ class newTours(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.get('http://newtours.demoaut.com/')
-        self.driver.maximize_window()
+        # self.driver.maximize_window()
+        self.driver.set_window_size(400, 400)
         self.page_index = PageIndex(self.driver)
         self.page_flight = FlightPage(self.driver)
         self.page_register = PageRegister(self.driver)
