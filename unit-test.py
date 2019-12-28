@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from Pages.PageIndex import *
 from Pages.FlightPage import *
 from Pages.PageRegister import *
+import xmlrunner
 
 
 class newTours(unittest.TestCase):
@@ -33,6 +34,13 @@ class newTours(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
         self.driver.quit()
+
+if __name__ == '__main__':
+    unittest.main(
+        testRunner=xmlrunner.XMLTestRunner(output=='output'),
+        failfast=False, buffer=False, catchbreak=False)
+
+
 
 
 

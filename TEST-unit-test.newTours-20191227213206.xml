@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" file="unit-test.py" name="unit-test.newTours-20191227213206" skipped="0" tests="3" time="22.488" timestamp="2019-12-27T21:32:29">
+	<testcase classname="unit-test.newTours" file="unit-test.py" line="19" name="test_dropdown" time="10.553" timestamp="2019-12-27T21:32:17">
+		<system-out>
+<![CDATA[]]>		</system-out>
+		<system-err>
+<![CDATA[]]>		</system-err>
+	</testcase>
+	<testcase classname="unit-test.newTours" file="unit-test.py" line="31" name="test_login_by_tabs" time="6.207" timestamp="2019-12-27T21:32:23">
+		<system-out>
+<![CDATA[]]>		</system-out>
+		<system-err>
+<![CDATA[]]>		</system-err>
+	</testcase>
+	<testcase classname="unit-test.newTours" file="unit-test.py" line="27" name="test_register" time="5.728" timestamp="2019-12-27T21:32:29">
+		<system-out>
+<![CDATA[]]>		</system-out>
+		<system-err>
+<![CDATA[]]>		</system-err>
+	</testcase>
+</testsuite>
